@@ -19,21 +19,17 @@ class MyApp extends StatelessWidget {
             body: Column(
               children:[
                 Container(
-                  width: 200.0,
-                  height: 200.0,
-                  margin: EdgeInsets.all(100.0),
+                  width: 100.0,
+                  height: 100.0,
+                  margin: EdgeInsets.all(50.0),
                   decoration: BoxDecoration(
                     color: Colors.orange,
-                    gradient: LinearGradient(
-                        begin: Alignment(-1.0, -1.0),
-                        end: Alignment(0.0, 0.0),
-                        tileMode:TileMode.repeated,
-                        colors:[Colors.purple.shade50, Color.fromARGB(255, 219, 146, 232)] ),
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30.0))
-                  )
+                    image: DecorationImage(
+                      image: NetworkImage("http://bit.ly/flutter_tiger")
                   ),
+                    shape: BoxShape.circle,
+                  )
+               ),
               ]
             ) 
           )
