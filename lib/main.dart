@@ -11,28 +11,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData.light(), 
+        title: "Continer App",
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Building Layouts with Flutter"),
+              title: Text("Using Containers"),
             ),
-            body: const Center(
-              // ignore: sort_child_properties_last
-              child: Text(
-                "Hello Flutter Layouts",
-                style: TextStyle(fontSize: 24),
-              ),
-            ),
-            floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.lightbulb_outline),
-              onPressed: () {
-                // ignore: avoid_print
-                print('You rang?');
-              },),
-              persistentFooterButtons: [
-                IconButton(icon: Icon(Icons.add_comment),onPressed: () {}),
-                IconButton(icon: Icon(Icons.add_alarm),onPressed: () {}),
-                IconButton(icon: Icon(Icons.add_location),onPressed: () {}),
-
-              ],));
+            body: Column(
+              children:[
+                Container(
+                  width: 200.0,
+                  height: 200.0,
+                  margin: EdgeInsets.all(100.0),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    gradient: LinearGradient(
+                        begin: Alignment(-1.0, -1.0),
+                        end: Alignment(0.0, 0.0),
+                        tileMode:TileMode.repeated,
+                        colors:[Colors.purple.shade50, Color.fromARGB(255, 219, 146, 232)] ),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30.0))
+                  )
+                  ),
+              ]
+            ) 
+          )
+    );
   }
 }
